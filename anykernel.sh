@@ -18,8 +18,8 @@ supported.versions=13-16
 ## AnyKernel file attributes
 # set permissions / ownership for included ramdisk files
 boot_attributes() {
-set_perm_recursive 0 0 755 644 "$ramdisk/*";
-set_perm_recursive 0 0 750 750 "$ramdisk/init*" "$ramdisk/sbin";
+	set_perm_recursive 0 0 755 644 "$ramdisk/*";
+	set_perm_recursive 0 0 750 750 "$ramdisk/init*" "$ramdisk/sbin";
 }
 
 # shell variables
@@ -33,9 +33,8 @@ patch_vbmeta_flag=auto;
 . tools/ak3-core.sh;
 
 # Apply Image & dtbo
-mv kernels/dtb.img dtb.img;
 mv kernels/dtbo.img dtbo.img;
-mv kernels/Image.gz Image.gz;
+mv kernels/Image.gz-dtb Image.gz-dtb;
 
 ## AnyKernel install
 dump_boot;
