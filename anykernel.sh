@@ -12,7 +12,7 @@ do.cleanup=1
 do.cleanuponabort=0
 device.name1=surya
 device.name2=karna
-supported.versions=13-16
+supported.versions=11-16
 '; } # end properties
 
 ## AnyKernel file attributes
