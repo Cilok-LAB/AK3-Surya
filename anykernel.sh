@@ -32,9 +32,10 @@ patch_vbmeta_flag=auto;
 # import patching functions/variables - see for reference
 . tools/ak3-core.sh;
 
-# Apply Image & dtbo
+# Apply Image & dts
+mv kernels/dtb.img dtb.img
 mv kernels/dtbo.img dtbo.img;
-mv kernels/Image.gz-dtb Image.gz-dtb;
+mv kernels/Image.gzImage.gz;
 
 ## AnyKernel install
 dump_boot;
