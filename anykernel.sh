@@ -35,7 +35,7 @@ patch_vbmeta_flag=auto;
 # Apply Image & dts
 mv kernels/dtb.img dtb.img
 mv kernels/dtbo.img dtbo.img;
-mv kernels/Image.gzImage.gz;
+mv kernels/Image.gz Image.gz;
 
 ## AnyKernel install
 dump_boot;
