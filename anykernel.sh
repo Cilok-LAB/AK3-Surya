@@ -37,10 +37,6 @@ load_build_props() {
     if [ -n "$SYSTEM_BUILD_PROP" ]; then
         PROP_MIUI=$(file_getprop "$SYSTEM_BUILD_PROP" ro.miui.ui.version.code)
     fi
-
-    if [ -f "$AKHOME/android_ver" ]; then
-        ANDROID_VERSION=$(cat "$AKHOME/android_ver")
-    fi
 } # end build.prop loader
 
 # begin legacy bootargs patch
@@ -70,6 +66,11 @@ patch_legacy_bootargs() {
         patch_cmdline init.is_legacy_timestamp init.is_legacy_timestamp=0
     fi
 } # end legacy bootargs patch
+
+# Android version strings
+if [ -f "$AKHOME/android_ver" ]; then
+    ANDROID_VERSION=$(cat "$AKHOME/android_ver")
+fi
 
 # shell variables
 block="/dev/block/bootdevice/by-name/boot";
